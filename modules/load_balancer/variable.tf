@@ -4,3 +4,10 @@ variable "location" {default = "CanadaCentral"}
 variable "public_ip_address_id" {}
 
 variable "linux_nic" {}
+
+variable "subnet_id" {}
+
+variable "linux_name" {
+  type    = map(string)
+  default = {}
+}

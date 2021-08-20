@@ -11,15 +11,19 @@ module "linux" {
     source = "./modules/linux"
     rg1 = "group3-assignment2-rg"
     location = "CanadaCentral"
-    subnet_id = [module.network.subnet.id]  
+    linux_name = var.linux_name
+    subnet_id = [module.network.subnet.id]
+    depends_on = [module.resource_group]
 }
 
 module "load_balancer" {
     source = "./modules/load_balancer"
     rg1 = "group3-assignment2-rg" 
+    # linux_name = var.linux_vms
     public_ip_address_id = [module.linux.linux_public_ip]
-    linux_nic = [module.linux.linux_nic]   
-  
+    linux_nic = [module.linux.linux_nic]
+    subnet_id = [module.network.subnet.id]
+    linux_name = var.linux_name 
 }
 module "network" {
     source = "./modules/network"
