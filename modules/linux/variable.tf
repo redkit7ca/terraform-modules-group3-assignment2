@@ -1,8 +1,12 @@
 # rg1 defined in modules/main.tf
 variable "rg1" {}
 variable "location" {}
-variable "subnet_id" {}
 
+variable "subnet_id" {}
+ # variable "subnet_id" {
+#   type    = map(string)
+#   default = {}
+# }
 variable "linux_avset" {
   default = "linux_avs"
 }

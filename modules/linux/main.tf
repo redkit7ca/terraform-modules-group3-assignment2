@@ -16,7 +16,7 @@ resource "azurerm_network_interface" "linux_nic" {
   ip_configuration {
     # name                          = each.key // previous version
     name                          = "${each.key}-nic-ip"
-    subnet_id                     = var.subnet_id // it was subnet1_name
+    subnet_id                     = var.subnet_id
     public_ip_address_id          = azurerm_public_ip.linux_pub_ip[each.key].id
     private_ip_address_allocation = "Dynamic"
   }

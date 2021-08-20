@@ -12,6 +12,11 @@ output "linux_nic" {
   # value = [azurerm_public_ip.linux_pub_ip[*].ip_address]
   value = module.linux.linux_nic
 }
+# output "subnet" {
+#   # value = [azurerm_public_ip.linux_pub_ip[*].ip_address]
+#   value = module.network.subnet
+# }
+
 
 # output "linux_nic" {
 #   # value = [azurerm_public_ip.linux_pub_ip[*].ip_address]
